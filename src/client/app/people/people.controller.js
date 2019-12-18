@@ -12,9 +12,10 @@
         var vm = this;
 
         vm.getPeople = getPeople;
+        vm.activate = activate;
         vm.isActive = isActive;
         vm.people = [];
-        vm.selectedPerson = undefined;
+        vm.selectedPerson = null;
         vm.title = 'People';
 
         activate();

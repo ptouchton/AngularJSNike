@@ -1,7 +1,7 @@
 describe('Services: peopleService', function() {
     'use strict';
     var factory, $httpBackend;
-    var getPeopleUrl = 'api/maa';
+    var getPeopleUrl = '/api/maa';
 
     beforeEach(function() {
         angular.mock.module('app');
@@ -32,14 +32,14 @@ describe('Services: peopleService', function() {
             factory.getPeople();
             expect(factory.getAlerts).toHaveBeenCalled;
         });
-        // it('should call getPeople method should return good data', function() {
-        //     var result = factory.getPeople();
-        //     $httpBackend.expectGET();
-        //     $httpBackend.flush();
-        //     result.then(function(data) {
-        //         expect(data.test).toBe('GoodData');
-        //     });
-        // });
+        it('should call getPeople method should return good data', function() {
+            var result = factory.getPeople();
+            $httpBackend.expectGET();
+            $httpBackend.flush();
+            result.then(function(data) {
+                expect(data.test).toBe('GoodData');
+            });
+        });
     });
 
 });
